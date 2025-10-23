@@ -28,8 +28,8 @@ export class ProductService {
     return this.http.put<IProduto>(`${this.apiURL}/update`, produto);
   }
 
-  delete(id: number): Observable<IProduto> {
-    return this.http.delete<IProduto>(`${this.apiURL}/delete/${id}`);
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiURL}/delete/${id}`);
   }
   
 }

@@ -6,6 +6,8 @@ import { App } from './app';
 import { ProductList } from './components/product/product-list/product-list';
 import { ProductForm } from './components/product/product-form/product-form';
 import { ProductDetail } from './components/product/product-detail/product-detail';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProductDetail } from './components/product/product-detail/product-detai
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
