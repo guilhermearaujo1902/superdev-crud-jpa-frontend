@@ -1,1 +1,37 @@
-<p>product-form works!</p>
+<div>
+    <h2>{{ isEdicao ? 'Editar Produto' : 'Novo Produto' }}</h2>
+    <form (ngSubmit)="save()">
+        <div class="row mb-3" *ngIf="produto.id">
+            <div class="col-6">
+                <label for="codigo" class="form-label">Código</label>
+                <input type="text" class="form-control placeholder" id="codigo" name="codigo" [(ngModel)]="produto.id" readonly>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="produto.nome" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <label for="preco" class="form-label">Preço</label>
+                <input type="text" class="form-control" id="preco" name="preco" [(ngModel)]="produto.preco" required>
+            </div>
+            <div class="col-6">
+                <label for="quantidade" class="form-label">Quantiade</label>
+                <input type="text" class="form-control" id="quantidade" name="quantidade" [(ngModel)]="produto.quantidade" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary w-100">Salvar</button>
+            </div>
+            <div class="col-6">
+                <a class="btn btn-secondary w-100" routerLink="/produtos">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</div>

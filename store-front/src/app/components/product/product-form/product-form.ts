@@ -12,7 +12,7 @@ import { ProductService } from '../../../services/ProductService';
 export class ProductForm {
 
   produto: IProduto = {
-    id: 0,
+    id: null,
     nome: '',
     preco: 0,
     quantidade: 0

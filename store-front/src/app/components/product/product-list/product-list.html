@@ -34,7 +34,16 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <button class="dropdown-item" (click)="delete(product.id)">Excluir</button>
+                                    <a 
+                                        class="dropdown-item" 
+                                        [routerLink]="['/produto/editar/', product.id]">
+                                        Editar
+                                    </a>
+                                    <button 
+                                        class="dropdown-item" 
+                                        (click)="delete(product.id || 0)">
+                                        Excluir
+                                    </button>
                                 </li>
                             </ul>
                         </div>
