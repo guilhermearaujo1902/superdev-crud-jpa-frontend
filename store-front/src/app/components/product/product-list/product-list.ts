@@ -11,8 +11,10 @@ import { ProductService } from '../../../services/ProductService';
 export class ProductList {
 
   products: IProduto[] = [];
+  filtroNome: string | null = null;
 
   constructor(private productService: ProductService) {}
+
 
   ngOnInit(): void {
     this.getProducts();
@@ -27,6 +29,15 @@ export class ProductList {
   delete(id: number): void {
     this.productService.delete(id).subscribe(() => {
       this.getProducts();
+    });
+  }
+
+  filterByNome(): void {
+    if (this.filtroNome == '') {
+      this.filtroNome = null;
+    }
+    this.productService.findByFilterNome(this.filtroNome).subscribe(response => {
+      this.products = response;
     });
   }
 

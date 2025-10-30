@@ -31,5 +31,9 @@ export class ProductService {
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiURL}/delete/${id}`);
   }
+
+  findByFilterNome(nome: string | null): Observable<IProduto[]> {
+    return this.http.get<IProduto[]>(`${this.apiURL}/filter/nome/${nome}`);
+  }
   
 }
